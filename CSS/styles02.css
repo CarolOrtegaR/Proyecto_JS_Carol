@@ -1,0 +1,236 @@
+/* 🎨 Reset General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 📌 Body */
+body {
+    background: #22b455;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/*  Navbar */
+nav {
+    background-color: #222;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #22b455;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: #22b455;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*  Contenedor Principal */
+main {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*  Contenido Interno */
+.container {
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*  Títulos */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/*  Formulario de Búsqueda */
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.search-box input:focus {
+    border: 2px solid #22b455;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background: #22b455;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.search-box button:hover {
+    background: #1a943d;
+    transform: scale(1.05);
+}
+
+/*  Mensaje de Error */
+.errorTxt {
+    color: #dc3545;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/*  Lista de Países */
+.country-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+/* 🏳 Tarjetas de País */
+.country-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+    cursor: pointer;
+}
+
+.country-card img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.country-card p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.country-card:hover img {
+    transform: scale(1.1);
+}
+
+/*  Detalles del País */
+.country-details {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+}
+
+.country-details.active {
+    display: flex;
+}
+
+.country-details .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .country-list {
+        grid-template-columns: 1fr;
+    }
+
+    .country-card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,133 @@
+/* Reset y Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces con efecto de transición */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #22b455;
+}
+
+/* 🌍 Navbar */
+nav {
+    background-color: #222;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #22b455;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: #22b455;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 📌 Sección Intro */
+#intro {
+    background-color: #c7f9cc;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#intro:hover {
+    transform: scale(1.02);
+}
+
+#intro h1 {
+    font-size: 2.5rem;
+    color: #22577a;
+    margin-bottom: 15px;
+}
+
+#intro p {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 📱 Diseño responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    #intro {
+        padding: 20px;
+    }
+
+    #intro h1 {
+        font-size: 2rem;
+    }
+
+    #intro p {
+        font-size: 1rem;
+    }
+}
